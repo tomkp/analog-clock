@@ -6,22 +6,12 @@
     <script>
         const setTime = () => {
             const now = new Date();
-            const seconds = now.getSeconds();
-            const minutes = now.getMinutes();
-            const hours = now.getHours();
-
-            const root = document.documentElement;
-            const secondsFraction = seconds / 60;
-            const minutesFraction = (minutes + secondsFraction) / 60;
-            const hoursFraction = (hours + minutesFraction) / 12;
-
-            const secondsInDegrees = (secondsFraction * 360) + "deg";
-            const minutesInDegrees = (minutesFraction * 360) + "deg";
-            const hoursInDegrees = (hoursFraction * 360) + "deg";
-
-            root.style.setProperty('--seconds', secondsInDegrees);
-            root.style.setProperty('--minutes', minutesInDegrees);
-            root.style.setProperty('--hours', hoursInDegrees);
+            const seconds = now.getSeconds() / 60;
+            const minutes = (now.getMinutes() + seconds) / 60;
+            const hours = (now.getHours() + minutes) / 12;
+            document.documentElement.style.setProperty('--seconds', (seconds * 360) + "deg");
+            document.documentElement.style.setProperty('--minutes', (minutes * 360) + "deg");
+            document.documentElement.style.setProperty('--hours', (hours * 360) + "deg");
         };
         setTime();
         setInterval(setTime, 1000);

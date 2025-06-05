@@ -1,0 +1,211 @@
+<svg fill="none" width="400px" height="400px" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+    <foreignObject width="400px" height="400px">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <script>
+                const setTime = () => {
+                    const now = new Date();
+                    const seconds = now.getSeconds() / 60;
+                    const minutes = (now.getMinutes() + seconds) / 60;
+                    const hours = (now.getHours() + minutes) / 12;
+                    document.documentElement.style.setProperty('--seconds', (seconds * 360) + "deg");
+                    document.documentElement.style.setProperty('--minutes', (minutes * 360) + "deg");
+                    document.documentElement.style.setProperty('--hours', (hours * 360) + "deg");
+                };
+                setTime();
+                setInterval(setTime, 1000);
+            </script>
+            <style>
+
+                :root {
+                --hours: 0;
+                --minutes: 0;
+                --seconds: 0;
+                }
+
+                html, body {
+                font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial,
+                "Lucida Grande", sans-serif;
+                font-size: 16px;
+                line-height: 1.5rem;
+                width: 100vw;
+                height: 100vh;
+                background: #000;
+                margin: 0;
+                }
+
+                .analog {
+
+                font-size: 5rem;
+
+                display: flex;
+                flex: 1;
+
+                .square {
+                width: 100%;
+                display: flex;
+                }
+
+                svg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                }
+
+                .clock-face {
+                display: none;
+                stroke: none;
+                }
+
+                .hours-indicator {
+                stroke: #fff;
+                stroke-width: 12;
+                stroke-linecap: round;
+                }
+
+                .minutes-indicator {
+                stroke: #333;
+                stroke-width: 12;
+                stroke-linecap: round;
+                }
+
+                .hour-hand {
+                stroke: rgba(255, 255, 255, .5);
+                stroke-linecap: round;
+                stroke-width: 12;
+                }
+
+                .minute-hand {
+                stroke-linecap: round;
+                stroke: rgba(255, 255, 255, .5);
+                stroke-width: 4;
+                }
+
+                .second-hand-main, .second-hand-counterweight {
+                stroke: rgba(180, 0, 0, .8);
+                }
+
+                .second-hand-counterweight {
+                stroke-width: 4;
+                }
+
+                .hours {
+                fill: rgba(255, 255, 255, .5);
+                stroke: transparent;
+                }
+
+                .hour-hand {
+                transform: rotate(var(--hours));
+                }
+
+                .minute-hand {
+                transform: rotate(var(--minutes));
+                }
+
+                .second-hand {
+                transform: rotate(var(--seconds));
+                }
+
+                }
+            </style>
+            <div class="analog">
+                <div class="square">
+                    <svg viewBox="0 0 1200 1200">
+                        <g transform="translate(600, 600)">
+                            <circle class="clock-face" r="480"></circle>
+                            <text class="hours" x="-20" y="-350" transform="rotate(30)">1</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(60)">2</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(90)">3</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(120)">4</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(150)">5</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(180)">6</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(210)">7</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(240)">8</text>
+                            <text class="hours" x="-20" y="-350" transform="rotate(270)">9</text>
+                            <text class="hours" x="-45" y="-350" transform="rotate(300)">10</text>
+                            <text class="hours" x="-45" y="-350" transform="rotate(330)">11</text>
+                            <text class="hours" x="-45" y="-350" transform="rotate(360)">12</text>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(0)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(6)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(12)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(18)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(24)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(30)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(36)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(42)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(48)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(54)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(60)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(66)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(72)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(78)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(84)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(90)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(96)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(102)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(108)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(114)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(120)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(126)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(132)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(138)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(144)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(150)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(156)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(162)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(168)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(174)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(180)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(186)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(192)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(198)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(204)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(210)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(216)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(222)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(228)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(234)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(240)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(246)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(252)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(258)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(264)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(270)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(276)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(282)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(288)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(294)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(300)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(306)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(312)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(318)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(324)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(330)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(336)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(342)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(348)"></line>
+                            <line class="minutes-indicator" y1="440" y2="450" transform="rotate(354)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(0)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(30)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(60)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(90)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(120)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(150)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(180)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(210)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(240)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(270)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(300)"></line>
+                            <line class="hours-indicator" y1="440" y2="450" transform="rotate(330)"></line>
+                            <line class="hour-hand" y1="10" y2="-250"></line>
+                            <line class="minute-hand" y1="10" y2="-420"></line>
+                            <g class="second-hand">
+                                <line class="second-hand-main" y1="100" y2="-380"></line>
+                                <line class="second-hand-counterweight" y1="100" y2="20"></line>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </foreignObject>
+</svg>

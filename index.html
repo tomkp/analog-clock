@@ -22,6 +22,16 @@
             --hours: 0;
             --minutes: 0;
             --seconds: 0;
+
+            /* Theme variables */
+            --clock-background: #000;
+            --clock-face-color: transparent;
+            --hours-indicator-color: #fff;
+            --minutes-indicator-color: #333;
+            --hour-hand-color: rgba(255, 255, 255, .5);
+            --minute-hand-color: rgba(255, 255, 255, .5);
+            --second-hand-color: rgba(180, 0, 0, .8);
+            --hours-text-color: rgba(255, 255, 255, .5);
         }
 
         html, body {
@@ -30,7 +40,7 @@
             line-height: 1.5rem;
             width: 100vw;
             height: 100vh;
-            background: #000;
+            background: var(--clock-background);
             margin: 0;
         }
 
@@ -55,34 +65,35 @@
             .clock-face {
                 display: none;
                 stroke: none;
+                fill: var(--clock-face-color);
             }
 
             .hours-indicator {
-                stroke: #fff;
+                stroke: var(--hours-indicator-color);
                 stroke-width: 12;
                 stroke-linecap: round;
             }
 
             .minutes-indicator {
-                stroke: #333;
+                stroke: var(--minutes-indicator-color);
                 stroke-width: 12;
                 stroke-linecap: round;
             }
 
             .hour-hand {
-                stroke: rgba(255, 255, 255, .5);
+                stroke: var(--hour-hand-color);
                 stroke-linecap: round;
                 stroke-width: 12;
             }
 
             .minute-hand {
                 stroke-linecap: round;
-                stroke: rgba(255, 255, 255, .5);
+                stroke: var(--minute-hand-color);
                 stroke-width: 4;
             }
 
             .second-hand-main, .second-hand-counterweight {
-                stroke: rgba(180, 0, 0, .8);
+                stroke: var(--second-hand-color);
             }
 
             .second-hand-counterweight {
@@ -90,7 +101,7 @@
             }
 
             .hours {
-                fill: rgba(255, 255, 255, .5);
+                fill: var(--hours-text-color);
                 stroke: transparent;
             }
 

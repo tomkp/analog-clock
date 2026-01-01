@@ -23,7 +23,7 @@
             --minutes: 0;
             --seconds: 0;
 
-            /* Theme variables */
+            /* Dark theme (default) */
             --clock-background: #000;
             --clock-face-color: transparent;
             --hours-indicator-color: #fff;
@@ -32,6 +32,19 @@
             --minute-hand-color: rgba(255, 255, 255, .5);
             --second-hand-color: rgba(180, 0, 0, .8);
             --hours-text-color: rgba(255, 255, 255, .5);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --clock-background: #f5f5f5;
+                --clock-face-color: transparent;
+                --hours-indicator-color: #222;
+                --minutes-indicator-color: #ccc;
+                --hour-hand-color: rgba(0, 0, 0, .6);
+                --minute-hand-color: rgba(0, 0, 0, .6);
+                --second-hand-color: rgba(180, 0, 0, .8);
+                --hours-text-color: rgba(0, 0, 0, .5);
+            }
         }
 
         html, body {
@@ -45,9 +58,7 @@
         }
 
         .analog {
-
             font-size: 5rem;
-
             display: flex;
             flex: 1;
 

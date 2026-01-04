@@ -9,6 +9,17 @@
             --second-hand-color: rgba(180, 0, 0, .8);
             --hours-text-color: rgba(255, 255, 255, .5);
         }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --background-color: #fff;
+                --hours-indicator-color: #000;
+                --minutes-indicator-color: #ccc;
+                --hour-hand-color: rgba(0, 0, 0, .5);
+                --minute-hand-color: rgba(0, 0, 0, .5);
+                --second-hand-color: rgba(180, 0, 0, .8);
+                --hours-text-color: rgba(0, 0, 0, .5);
+            }
+        }
         .clock-face {
             display: none;
             stroke: none;
